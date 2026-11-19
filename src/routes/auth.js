@@ -1,0 +1,1 @@
+const express=require('express');const controller=require('../controllers/authController');const {authRequired,adminOnly}=require('../auth/security');const router=express.Router();router.post('/login',controller.login);router.get('/me',authRequired,adminOnly,controller.me);module.exports=router;
